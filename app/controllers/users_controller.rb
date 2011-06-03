@@ -3,6 +3,6 @@ class UsersController < ApplicationController
     @title="Signup"
   end
   def show
-    @user = User.find(1)
+    @user = User.find(params[:id])
   end
 end
