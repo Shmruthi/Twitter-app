@@ -2,6 +2,7 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 %>
-
-<%= @user.name %>, <%= @user.email %>
-
+<h1>
+<%= gravatar_for @user, :size => 100 %>
+<%= @user.name %>
+</h1>
