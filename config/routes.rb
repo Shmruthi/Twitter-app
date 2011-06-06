@@ -1,8 +1,5 @@
 TwitterApp::Application.routes.draw do
-  get "sessions/new"
-
-  get "users/new"
-
+ 
   root :to => 'pages#home'
   resources :users;
 

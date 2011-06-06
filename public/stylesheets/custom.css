@@ -194,3 +194,13 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+ul.users {
+  margin-top: 2em;
+  text-align: left;
+  font-size: 150%;
+}
+
+.users li {
+  list-style: none;
+}
