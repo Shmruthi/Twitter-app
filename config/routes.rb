@@ -1,5 +1,9 @@
 TwitterApp::Application.routes.draw do
  
+  get "relationships/new"
+
+  get "elationships/new"
+
   get "microposts/new"
 
   root :to => 'pages#home'

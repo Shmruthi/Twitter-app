@@ -50,9 +50,8 @@ class User < ActiveRecord::Base
   end
 
   def follow!(followed)
-    r = Relationship.new(:followed_id => followed.id)
-    r.follower_id = self.id
-    r.save!
+    relationships.create!(:followed_id => followed.id)
+   
   end
 
   def unfollow!(followed)

@@ -1,0 +1,7 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+$("follow_form").update("<%= escape_javascript(render('users/follow')) %>")
+$("followers").update('<%= "#{@user.followers.count} followers" %>')
