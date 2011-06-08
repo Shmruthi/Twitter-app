@@ -15,6 +15,13 @@
     <span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
     </span>
+    <span>
+      <% if !current_user?(feed_item.user) %>
+        <%=form_for @micropost do |f| %>
+        <%= f.submit "Reply" %>
+        <%end %>
+      <%end%>
+    </span>
   </td>
   <% if current_user?(feed_item.user) %>
   <td>
