@@ -12,6 +12,10 @@ class MicropostsController < ApplicationController
       render 'pages/home'
     end
   end
+
+  def new
+    @comments = @micropost.comments.build(:id => params[:id])
+  end
   
   def destroy
     @micropost.destroy

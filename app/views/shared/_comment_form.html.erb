@@ -3,8 +3,9 @@
 # and open the template in the editor.
 %>
 
-<%= form_for @micropost do |f| %>
+<%= form_for @comment do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
+<%=  f.hidden_field :msg_id %>
   <div class="field">
     <%= f.text_area :content %>
   </div>

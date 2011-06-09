@@ -1,12 +1,14 @@
 class Micropost < ActiveRecord::Base
-  attr_accessible :content
+  attr_accessible :content, :micropost_id
 belongs_to :user
+has_many :comments,:dependent => :destroy, :foreign_key => 'msg_id'
 
   validates :content, :presence => true, :length => { :maximum => 140 }
   validates :user_id, :presence => true
 
 default_scope :order => 'microposts.created_at DESC'
 scope :from_users_followed_by,lambda{|user| followed_by(user)} 
+
 
   private
   def self.followed_by(user)

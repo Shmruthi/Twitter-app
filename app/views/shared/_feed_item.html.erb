@@ -15,20 +15,18 @@
     <span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
     </span>
-    <span>
-      <% if !current_user?(feed_item.user) %>
-        <%=form_for @micropost do |f| %>
-        <%= f.submit "Reply" %>
-        <%end %>
-      <%end%>
+    <span class="comment">
+      <%= link_to "Reply", comments_path(:id => feed_item.id) %>
     </span>
-  </td>
+   </td>
   <% if current_user?(feed_item.user) %>
   <td>
     <%= link_to "delete", feed_item, :method => :delete,
                                      :confirm => "You sure?",
                                      :title => feed_item.content %>
   </td>
+  <%else%>
+    
   <% end %>
 </tr>
 
