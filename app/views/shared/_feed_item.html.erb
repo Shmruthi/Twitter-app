@@ -18,7 +18,14 @@
     <span class="comment">
       <%= link_to "Reply", comments_path(:id => feed_item.id) %>
     </span>
-   </td>
+    <span>
+    <% if feed_item.comments.any? %>
+              <table class="comments" summary ="Micropost comments">
+                <%= render feed_item.comments %>
+              </table>
+            <% end %>
+    </span>
+    </td>
   <% if current_user?(feed_item.user) %>
   <td>
     <%= link_to "delete", feed_item, :method => :delete,

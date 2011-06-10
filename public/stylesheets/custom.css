@@ -262,3 +262,7 @@ form.new_micropost textarea {
 p.about {
     color: #069;
 }
+
+comments{
+    margin-left: 20px
+}
